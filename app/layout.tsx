@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { SITE } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Footer />
         <WhatsAppFloat />
         <JsonLd data={[organizationLd, websiteLd]} />
+        <Analytics />
       </body>
     </html>
   );
