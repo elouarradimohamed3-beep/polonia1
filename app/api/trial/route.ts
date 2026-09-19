@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   const lead = {
     email: email.trim(),
     device,
-    source: `${process.env.NEXT_PUBLIC_SITE_URL ?? "iptvpolonia.pl"} / darmowy test`,
+    source: `${process.env.NEXT_PUBLIC_SITE_URL ?? "www.iptvpolonia.pl"} / darmowy test`,
     createdAt: new Date().toISOString(),
   };
 

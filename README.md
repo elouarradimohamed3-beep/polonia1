@@ -1,6 +1,6 @@
 # IPTV Polska (Next.js)
 
-Next.js (App Router, Tailwind v4) website for iptvpolonia.pl.
+Next.js (App Router, Tailwind v4) website for www.iptvpolonia.pl.
 
 ## Run
     npm install
@@ -14,7 +14,7 @@ Next.js (App Router, Tailwind v4) website for iptvpolonia.pl.
 - `next.config.ts` 308 redirects for old WooCommerce URLs (/shop, /cart, /checkout, /my-account)
 
 ## Environment
-`NEXT_PUBLIC_SITE_URL` (default `https://iptvpolonia.pl`) is used for canonical URLs, sitemap and robots.
+`NEXT_PUBLIC_SITE_URL` (default `https://www.iptvpolonia.pl`, the address your host serves) is used for canonical URLs, sitemap and robots.
 
 ## Orders
 WooCommerce checkout is not migrated. "Zamów teraz" buttons open WhatsApp with the chosen plan prefilled.

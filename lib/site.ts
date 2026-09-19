@@ -1,6 +1,6 @@
 export const SITE = {
   name: "IPTV Polska",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://iptvpolonia.pl",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.iptvpolonia.pl",
   email: "goldengateiptv@gmail.com",
   whatsappNumber: "212707711512",
   phoneDisplay: "+212 707 711 512",
