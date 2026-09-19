@@ -1,7 +1,32 @@
 import type { NextConfig } from "next";
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+];
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  poweredByHeader: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+  },
+  async headers() {
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
+  // Old WordPress / WooCommerce URLs keep working (and keep their SEO value).
+  async redirects() {
+    return [
+      { source: "/shop", destination: "/#pricing", permanent: true },
+      { source: "/cart", destination: "/#pricing", permanent: true },
+      { source: "/checkout", destination: "/#pricing", permanent: true },
+      { source: "/my-account", destination: "/skontaktuj-sie-z-nami", permanent: true },
+      { source: "/refund_returns", destination: "/zasady-zwrotow-i-anulowania", permanent: true },
+      { source: "/refund-and-returns-policy", destination: "/zasady-zwrotow-i-anulowania", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
